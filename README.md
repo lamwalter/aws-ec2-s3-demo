@@ -5,18 +5,12 @@ Deployed an EC2 instance with an IAM instance profile that has **least-privilege
 
 ---
 
-## Highlights
+<h3>Highlights</h3>
 
-<p align="center">
-  <img src="screenshots/2025-08/01_s3_bucket_list.png" alt="S3 bucket list" width="820">
-</p>
+<img src="screenshots/2025-08/01_s3_bucket_list.png" width="720" />
+<img src="screenshots/2025-08/12_lifecycle_rule_details.png" width="720" />
+<img src="screenshots/2025-08/14_role_permissions_strict_attached.png" width="720" />
 
-<p align="center">
-  <img src="screenshots/2025-08/12_lifecycle_rule_details.png" alt="Lifecycle rule details" width="820">
-</p>
-
-<p align="center">
-  <img src="screenshots/2025-08/14_role_permissions_strict_attached.png" alt="Strict policy attached to role" width="820">
 </p>
 
 ---
