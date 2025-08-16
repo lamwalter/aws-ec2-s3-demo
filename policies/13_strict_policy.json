@@ -1,0 +1,33 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListOnlyAllowedPrefixes",
+      "Effect": "Allow",
+      "Action": ["s3:ListBucket"],
+      "Resource": "arn:aws:s3:::walter-qa-bucket-001",
+      "Condition": {
+        "StringLike": { "s3:prefix": ["ec2-demo/*", "lifecycle-demo/*"] }
+      }
+    },
+    {
+      "Sid": "RWWithinAllowedPrefixes",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject","s3:PutObject","s3:DeleteObject"],
+      "Resource": [
+        "arn:aws:s3:::walter-qa-bucket-001/ec2-demo/*",
+        "arn:aws:s3:::walter-qa-bucket-001/lifecycle-demo/*"
+      ]
+    },
+    {
+      "Sid": "DenyInsecureTransport",
+      "Effect": "Deny",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::walter-qa-bucket-001",
+        "arn:aws:s3:::walter-qa-bucket-001/*"
+      ],
+      "Condition": { "Bool": { "aws:SecureTransport": "false" } }
+    }
+  ]
+}
