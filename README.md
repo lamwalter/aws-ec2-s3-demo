@@ -6,7 +6,10 @@ Deployed an EC2 instance with an IAM instance profile that has **least-privilege
 ## Highlights
 ![S3 bucket list](screenshots/2025-08/01_s3_bucket_list.png)
 ![Lifecycle rule details](screenshots/2025-08/12_lifecycle_rule_details.png)
-![Strict policy attached to role](screenshots/2025-08/14_role_permissions_strict_attached.png)
+![Strict policy attached](screenshots/2025-08/14_role_permissions_strict_attached.png)
+![EC2 script run](screenshots/2025-08/15_ec2_script_run.png)
+![S3 objects after script](screenshots/2025-08/16_s3_objects_after_script.png)
+
 
 ## Architecture at a glance
 - **Bucket:** `walter-qa-bucket-001`  
