@@ -31,3 +31,22 @@ aws s3 ls s3://walter-qa-bucket-001/ec2-demo/
 
 # Negative (expected AccessDenied under strict policy)
 echo nope | aws s3 cp - s3://walter-qa-bucket-001/forbidden/deny.txt
+
+## EC2 CLI basics (CloudShell): launch instance, get Public IP, list buckets
+
+From CloudShell I automated:
+
+1) Ensure a security group that allows SSH (22) in the default VPC.  
+2) Fetch the latest Amazon Linux 2023 AMI.  
+3) Find or launch an instance tagged `cli-ec2-demo`.  
+4) Grab the instance `PublicIpAddress`.  
+5) Verify S3 access with `aws s3 ls`.
+
+**Screenshots**
+- [EC2 CLI: launch + Public IP](screenshots/2025-08/17_ec2_cli_launch_public_ip.png)
+- [S3 bucket list](screenshots/2025-08/18_cli_s3_list_buckets.png)
+
+**Optional: SSH from your laptop**
+```bash
+chmod 400 /full/path/to/walter-ec2-key.pem
+ssh -o StrictHostKeyChecking=accept-new -i /full/path/to/walter-ec2-key.pem ec2-user@<PUBLIC_IP>
