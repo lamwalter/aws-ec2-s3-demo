@@ -9,7 +9,8 @@ Deployed an EC2 instance with an IAM instance profile that has **least-privilege
 ![Strict policy attached](screenshots/2025-08/14_role_permissions_strict_attached.png)
 ![EC2 script run](screenshots/2025-08/15_ec2_script_run.png)
 ![S3 objects after script](screenshots/2025-08/16_s3_objects_after_script.png)
-
+[S3 lifecycle (IA + expire) details](screenshots/2025-08/19_lifecycle_rule_ia_details.png)  
+[Object with temp=true showing lifecycle rule](screenshots/2025-08/20_object_with_ia_rule.png)
 
 ## Architecture at a glance
 - **Bucket:** `walter-qa-bucket-001`  
@@ -21,6 +22,12 @@ Deployed an EC2 instance with an IAM instance profile that has **least-privilege
   Grants `s3:ListBucket` on the bucket and `Get/Put/DeleteObject` **only** within `walter-qa-bucket-001/*`.
 - **Strict:** [policies/13_strict_policy.json](policies/13_strict_policy.json)  
   Scopes access to prefixes `ec2-demo/*` and `lifecycle-demo/*` **and** denies non-TLS (`aws:SecureTransport=false`).
+
+### S3 Lifecycle: transition to IA + expire
+- **Rule:** `temp-ia-expire`
+- **Scope:** objects tagged `temp=true`
+- **Actions:** Standard-IA @ 30 days; Expire @ 365 days
+- **Min size:** 128 KB (recommended for IA)
 
 ## How I tested (from EC2)
 ```bash
