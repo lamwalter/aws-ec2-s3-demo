@@ -4,6 +4,7 @@
 Deployed an EC2 instance with an IAM instance profile that has **least-privilege** access to a single S3 bucket. I demonstrate a **bucket-scoped baseline policy** and a **prefix-scoped strict policy** (with TLS-only), plus an S3 **lifecycle rule** that targets objects tagged `temp=true` (transition to Intelligent-Tiering on Day 0; expire on Day 1). Terminal proofs include upload, download, and an expected `AccessDenied`. Console screenshots document the setup.
 
 ## Highlights
+Full evidence in Appendix.
 ![S3 bucket list](screenshots/2025-08/01_s3_bucket_list.png)
 ![Lifecycle rule details](screenshots/2025-08/12_lifecycle_rule_details.png)
 ![Strict policy attached](screenshots/2025-08/14_role_permissions_strict_attached.png)
@@ -53,7 +54,7 @@ From CloudShell I automated:
 4) Grab the instance `PublicIpAddress`.  
 5) Verify S3 access with `aws s3 ls`.
 
-**Screenshots**
+**Appendix: Screenshots (full evidence)**
 - [EC2 CLI: launch + Public IP](screenshots/2025-08/17_ec2_cli_launch_public_ip.png)
 - [S3 bucket list](screenshots/2025-08/18_cli_s3_list_buckets.png)
 
