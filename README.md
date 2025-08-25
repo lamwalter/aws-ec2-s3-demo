@@ -13,6 +13,8 @@ Deployed an EC2 instance with an IAM instance profile that has **least-privilege
 ![Object with temp=true showing lifecycle rule](screenshots/2025-08/20_object_with_ia_rule.png)
 ![EC2 CLI cp (terminal)](screenshots/2025-08/21_ec2_cli_cp_terminal.png)
 ![S3 objects after cp](screenshots/2025-08/22_s3_objects_after_cli_cp.png)
+![EC2 + IAM automation (terminal)](screenshots/2025-08/21_ec2_automation_run.png)  
+![S3 objects after automation](screenshots/2025-08/22_s3_objects_after_automation.png)
 
 ## Architecture at a glance
 - **Bucket:** `walter-qa-bucket-001`  
@@ -59,3 +61,13 @@ From CloudShell I automated:
 ```bash
 chmod 400 /full/path/to/walter-ec2-key.pem
 ssh -o StrictHostKeyChecking=accept-new -i /full/path/to/walter-ec2-key.pem ec2-user@<PUBLIC_IP>
+
+### EC2 + IAM automation script
+From the EC2 instance:
+```bash
+cat > ec2_iam_cp.sh <<'EOF'
+# (script omitted here — see scripts/ec2_iam_cp.sh in this repo)
+EOF
+chmod +x ec2_iam_cp.sh
+./ec2_iam_cp.sh
+
