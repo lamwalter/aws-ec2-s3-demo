@@ -14,8 +14,9 @@ Full evidence in Appendix.
 ![Object with temp=true showing lifecycle rule](screenshots/2025-08/20_object_with_ia_rule.png)
 ![EC2 CLI cp (terminal)](screenshots/2025-08/21_ec2_cli_cp_terminal.png)
 ![S3 objects after cp](screenshots/2025-08/22_s3_objects_after_cli_cp.png)
-![EC2 IAM script run](screenshots/2025-08/23_ec2_iam_script_run.png) •
-![S3 objects after script](screenshots/2025-08/24_s3_objects_after_iam_script.png)
+![EC2 + IAM automation (terminal)](screenshots/2025-08/23_ec2_iam_script_run.png)  
+![S3 objects after automation](screenshots/2025-08/24_s3_objects_after_iam_script.png)
+
 
 ## Architecture at a glance
 - **Bucket:** `walter-qa-bucket-001`  
@@ -54,9 +55,15 @@ From CloudShell I automated:
 4) Grab the instance `PublicIpAddress`.  
 5) Verify S3 access with `aws s3 ls`.
 
-**Appendix: Screenshots (full evidence)**
+## Appendix
+
+### A) CLI basics (full evidence)
 - [EC2 CLI: launch + Public IP](screenshots/2025-08/17_ec2_cli_launch_public_ip.png)
 - [S3 bucket list](screenshots/2025-08/18_cli_s3_list_buckets.png)
+
+### B) Previous automation runs
+- **Run #1:** [terminal](screenshots/2025-08/15_ec2_script_run.png) · [S3 after](screenshots/2025-08/16_s3_objects_after_script.png)
+- **Run #2:** [terminal](screenshots/2025-08/21_ec2_automation_run.png) · [S3 after](screenshots/2025-08/22_s3_objects_after_automation.png)
 
 **Optional: SSH from your laptop**
 ```bash
