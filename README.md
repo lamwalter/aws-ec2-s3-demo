@@ -13,8 +13,8 @@ Deployed an EC2 instance with an IAM instance profile that has **least-privilege
 ![Object with temp=true showing lifecycle rule](screenshots/2025-08/20_object_with_ia_rule.png)
 ![EC2 CLI cp (terminal)](screenshots/2025-08/21_ec2_cli_cp_terminal.png)
 ![S3 objects after cp](screenshots/2025-08/22_s3_objects_after_cli_cp.png)
-![EC2 + IAM automation (terminal)](screenshots/2025-08/21_ec2_automation_run.png)  
-![S3 objects after automation](screenshots/2025-08/22_s3_objects_after_automation.png)
+![EC2 IAM script run](screenshots/2025-08/23_ec2_iam_script_run.png) •
+![S3 objects after script](screenshots/2025-08/24_s3_objects_after_iam_script.png)
 
 ## Architecture at a glance
 - **Bucket:** `walter-qa-bucket-001`  
